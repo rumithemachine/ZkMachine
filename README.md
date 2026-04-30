@@ -1,4 +1,5 @@
 # ZK Machine
+<img width="736" height="629" alt="indir" src="https://github.com/user-attachments/assets/f0b963c3-331a-4899-9b46-ef287e99c8d7" />
 
 Privacy-preserving advertising platform on Stellar blockchain using zero-knowledge proofs. Users watch ads anonymously and earn XLM rewards without revealing their identity.
 
