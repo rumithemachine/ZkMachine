@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZK Machine - Gizlilik Odaklı Reklam Platformu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🔐 ZK Machine</h1>
+                <p class="tagline">Gizliliğinizi Koruyarak Kazanın</p>
+            </div>
+            <div class="wallet-section">
+                <button id="connectWallet" class="btn btn-primary">Cüzdan Bağla</button>
+                <div id="walletInfo" class="wallet-info hidden">
+                    <span id="walletAddress"></span>
+                    <button id="disconnectWallet" class="btn btn-secondary">Çıkış</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero">
+                <h2>Verileriniz Gizli Kalır, Siz Kazanırsınız</h2>
+                <p>Zero-Knowledge Proof teknolojisi ile kimliğiniz açığa çıkmadan reklam izleyin ve XLM kazanın</p>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalUsers">0</div>
+                        <div class="stat-label">Kullanıcı</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalAds">0</div>
+                        <div class="stat-label">Aktif Kampanya</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalEarned">0 XLM</div>
+                        <div class="stat-label">Toplam Kazanç</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Dashboard -->
+            <section id="dashboard" class="dashboard hidden">
+                <h3>Kontrol Paneli</h3>
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <span class="label">İzlenen Reklam:</span>
+                        <span class="value" id="userAdViews">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Kazanılan:</span>
+                        <span class="value" id="userEarned">0 XLM</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Durum:</span>
+                        <span class="value verified" id="userStatus">✓ Doğrulanmış</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ad Campaigns -->
+            <section class="campaigns">
+                <h3>Mevcut Kampanyalar</h3>
+                <div id="campaignsList" class="campaigns-grid">
+                    <!-- Campaigns will be loaded here -->
+                    <div class="campaign-card">
+                        <div class="campaign-header">
+                            <h4>Kampanya #1</h4>
+                            <span class="badge active">Aktif</span>
+                        </div>
+                        <div class="campaign-body">
+                            <p class="reward">💰 Ödül: <strong>0.1 XLM</strong> / izlenme</p>
+                            <p class="budget">Kalan Bütçe: <strong>100 XLM</strong></p>
+                            <button class="btn btn-watch" onclick="watchAd(1)">Reklam İzle</button>
+                        </div>
+                    </div>
+
+                    <div class="campaign-card">
+                        <div class="campaign-header">
+                            <h4>Kampanya #2</h4>
+                            <span class="badge active">Aktif</span>
+                        </div>
+                        <div class="campaign-body">
+                            <p class="reward">💰 Ödül: <strong>0.15 XLM</strong> / izlenme</p>
+                            <p class="budget">Kalan Bütçe: <strong>75 XLM</strong></p>
+                            <button class="btn btn-watch" onclick="watchAd(2)">Reklam İzle</button>
+                        </div>
+                    </div>
+
+                    <div class="campaign-card">
+                        <div class="campaign-header">
+                            <h4>Kampanya #3</h4>
+                            <span class="badge active">Aktif</span>
+                        </div>
+                        <div class="campaign-body">
+                            <p class="reward">💰 Ödül: <strong>0.2 XLM</strong> / izlenme</p>
+                            <p class="budget">Kalan Bütçe: <strong>50 XLM</strong></p>
+                            <button class="btn btn-watch" onclick="watchAd(3)">Reklam İzle</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="how-it-works">
+                <h3>Nasıl Çalışır?</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Cüzdanınızı Bağlayın</h4>
+                        <p>Stellar cüzdanınızı güvenli bir şekilde bağlayın</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>ZK Proof Oluşturun</h4>
+                        <p>Kimliğiniz gizli kalarak doğrulama yapın</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Reklam İzleyin</h4>
+                        <p>İlginizi çeken reklamları izleyin</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>XLM Kazanın</h4>
+                        <p>Anında cüzdanınıza XLM kazanın</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Privacy Features -->
+            <section class="features">
+                <h3>Gizlilik Özellikleri</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h4>Zero-Knowledge Proof</h4>
+                        <p>Kimliğiniz hiçbir zaman açığa çıkmaz</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h4>Anında Ödemeler</h4>
+                        <p>Stellar blockchain ile hızlı transferler</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h4>Güvenli Smart Contract</h4>
+                        <p>Soroban ile denetlenmiş kod</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💎</div>
+                        <h4>Şeffaf Sistem</h4>
+                        <p>Tüm işlemler blockchain'de kayıtlı</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 ZK Machine - Stellar Blockchain üzerinde çalışır</p>
+            <p class="contract-info">Contract: <span id="contractAddress">CBMH5XGPXFLU5AV4JHMPMGYC2U2OLMTEXGUV7VID76YIDFFEBLJMVVKT</span></p>
+        </footer>
+    </div>
+
+    <!-- Ad Modal -->
+    <div id="adModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeAdModal()">&times;</span>
+            <h3>Reklam İzleniyor...</h3>
+            <div class="ad-content">
+                <div class="ad-placeholder">
+                    <p>🎬 Reklam İçeriği</p>
+                    <p class="ad-timer">Kalan süre: <span id="adTimer">15</span> saniye</p>
+                </div>
+            </div>
+            <div class="zk-proof-status">
+                <p>🔐 ZK Proof oluşturuluyor...</p>
+                <div class="progress-bar">
+                    <div class="progress" id="zkProgress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
