@@ -28,6 +28,7 @@ RPC: https://soroban-testnet.stellar.org
 ```
 
 **Explorer**: [View on Stellar Expert](https://stellar.expert/explorer/testnet/contract/CBMH5XGPXFLU5AV4JHMPMGYC2U2OLMTEXGUV7VID76YIDFFEBLJMVVKT)
+<img width="1016" height="135" alt="image" src="https://github.com/user-attachments/assets/e226bb2e-1d26-416b-a693-b7fa585b02ba" />
 
 ### Active Campaigns
 
